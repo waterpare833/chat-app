@@ -1,0 +1,8 @@
+﻿{
+  "profiles": {
+    "Port:5058": {
+      "commandName": "Project",
+      "commandLineArgs": "5058"
+    }
+  }
+}

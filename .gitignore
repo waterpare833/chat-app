@@ -1,0 +1,12 @@
+﻿# Rider 자동 생성
+*.idea
+# macos 자동 생성 파일
+/**/*.DS_Store
+
+# DotSettings
+*.DotSettings.user
+/**/*.DotSettings
+
+# Build artifacts
+**/bin/
+**/obj/
