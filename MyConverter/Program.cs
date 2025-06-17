@@ -5,10 +5,9 @@ var servicePortConvertResult = ushort.TryParse(servicePortString, out var servic
 if (!servicePortConvertResult) throw new Exception("service port의 값이 올바르지 않습니다.");
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseUrls($"http://localhost:{servicePort}");
 builder.WebHost.ConfigureKestrel(options =>
 {
-    options.ConfigureEndpointDefaults(endpointOptions => endpointOptions.Protocols = HttpProtocols.Http2);
+    options.ListenAnyIP(servicePort, listenOptions => listenOptions.Protocols = HttpProtocols.Http2);
 });
 
 builder.Services.AddMagicOnion();

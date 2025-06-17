@@ -4,6 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <RootNamespace>LSH.MY_CONVERTER</RootNamespace>
         <Nullable>enable</Nullable>
+        <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
     </PropertyGroup>
 
     <ItemGroup>
