@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyConverter.Interface", "My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyConverter.TempTest", "MyConverter.TempTest\MyConverter.TempTest.csproj", "{1EEDA9B6-F971-4F83-A78D-E388A12DA59B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client1", "Client1\Client1.csproj", "{A5FA04A0-C754-4EBA-9C86-0F5205D26047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{74224A52-A110-4D4D-BE10-3C0B3A833015}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{1EEDA9B6-F971-4F83-A78D-E388A12DA59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EEDA9B6-F971-4F83-A78D-E388A12DA59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EEDA9B6-F971-4F83-A78D-E388A12DA59B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5FA04A0-C754-4EBA-9C86-0F5205D26047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FA04A0-C754-4EBA-9C86-0F5205D26047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FA04A0-C754-4EBA-9C86-0F5205D26047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FA04A0-C754-4EBA-9C86-0F5205D26047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74224A52-A110-4D4D-BE10-3C0B3A833015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74224A52-A110-4D4D-BE10-3C0B3A833015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74224A52-A110-4D4D-BE10-3C0B3A833015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74224A52-A110-4D4D-BE10-3C0B3A833015}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
