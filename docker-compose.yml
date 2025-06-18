@@ -1,0 +1,9 @@
+﻿name: my-service
+
+services:
+  my-converter:
+    image: myconverter
+    container_name: my-converter-service
+    ports:
+      - "5058:5058"
+    command: [ "5058" ]
