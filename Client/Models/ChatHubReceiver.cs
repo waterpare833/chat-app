@@ -5,12 +5,12 @@ namespace Client;
 
 class ChatHubReceiver : IChatHubReceiver
 {
-    public void OnJoin(string userName)
+    public void On_join(string userName)
         => Console.WriteLine($"{userName} joined.");
 
-    public void OnLeave(string userName)
+    public void On_leave(string userName)
         => Console.WriteLine($"{userName} left.");
 
-    public void OnSendMessage(string userName, string message)
+    public void on_send_message(string userName, string message)
         => Console.WriteLine($"{userName}: {message}");
 }

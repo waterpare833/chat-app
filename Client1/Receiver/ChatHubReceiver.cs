@@ -2,12 +2,15 @@
 
 class ChatHubReceiver : IChatHubReceiver
 {
-    public void OnJoin(string userName)
-        => Console.WriteLine($"{userName} joined.");
+    public void On_join(string userName)
+    {
+    }
 
-    public void OnLeave(string userName)
-        => Console.WriteLine($"{userName} left.");
+    public void On_leave(string userName)
+    {
+    }
 
-    public void OnSendMessage(string userName, string message)
-        => Console.WriteLine($"{userName}: {message}");
+    public void on_send_message(string userName, string message)
+    {
+    }
 }

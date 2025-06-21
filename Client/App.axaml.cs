@@ -26,6 +26,6 @@ public class App : Application
         var receiver = new ChatHubReceiver();
         ChatHub = await StreamingHubClient.ConnectAsync<IChatHub, IChatHubReceiver>(channel, receiver);
 
-        await ChatHub.JoinAsync("room", "client");
+        await ChatHub.Join_room("room", "client");
     }
 }

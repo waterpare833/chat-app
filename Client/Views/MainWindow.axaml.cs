@@ -17,6 +17,6 @@ public partial class MainWindow : Window
 
     private async void Test(object? sender, RoutedEventArgs e)
     {
-        await App.ChatHub!.SendMessageAsync("Hello, world!");
+        await App.ChatHub!.Send_message("Hello, world!");
     }
 }
