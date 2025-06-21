@@ -1,29 +1,26 @@
 ﻿namespace MY_DB;
 
-public class AuthService : ServiceBase<IAuthService>, IAuthService
+public class AuthService(IUserRepository user_repo): ServiceBase<IAuthService>, IAuthService
 {
-    private readonly IUserRepository user_repo;
-
-    public AuthService(IUserRepository user_repo) => this.user_repo = user_repo;
-
-    public async UnaryResult<bool> Register(string username, string password)
+    public async UnaryResult<bool> Register(User user)
     {
-        var hashed_password = hash_password(password);
-        return await this.user_repo.Add_user(username, hashed_password);
+        var hashed_password = hash_password(user.Password_hash);
+        var user_to_add = user with { Password_hash = hashed_password };
+        return await user_repo.Add_user(user_to_add);
     }
 
-    public async UnaryResult<bool> Login(string username, string password)
+    public async UnaryResult<bool> Login(User user)
     {
-        var user = await this.user_repo.Get_user(username);
-        if (user is null) return false;
+        var existing_user = await user_repo.Get_user(user.Username);
+        if (existing_user is null) return false;
 
-        var hash = hash_password(password);
-        return hash == user.Password_hash;
+        var hash = hash_password(user.Password_hash);
+        return hash == existing_user.Password_hash;
     }
 
-    public async UnaryResult<bool> Is_username_taken(string username, string password)
+    public async UnaryResult<bool> Is_username_taken(string username)
     {
-        var user = await this.user_repo.Get_user(username);
+        var user = await user_repo.Get_user(username);
         return user != null;
     }
 

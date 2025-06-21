@@ -1,5 +1,6 @@
 ﻿namespace MY_DB;
 
+[MessagePackObject(true)]
 public record User(
     Guid Id,
     string Username,
