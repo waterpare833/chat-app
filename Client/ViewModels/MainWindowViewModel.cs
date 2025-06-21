@@ -1,8 +1,7 @@
 ﻿namespace Client.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel()
 {
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Welcome to Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
+    public BindableReactiveProperty<ReactiveObject> View { get; } = new();
+    public BindableReactiveProperty<bool> Is_popup_showing { get; } = new(false);
 }

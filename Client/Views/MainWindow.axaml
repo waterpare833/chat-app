@@ -10,11 +10,26 @@
         Title="Client">
 
     <Design.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <StackPanel>
-        <Button Content="Send" Click="Test"/>
-    </StackPanel>
+    <Grid>
+        <ContentControl Content="{Binding View.Value}" />
 
+        <Rectangle Name="BlurOverlay" Fill="Gray" Opacity="0.5" IsHitTestVisible="False"
+                   IsVisible="{Binding Is_popup_showing.Value}">
+            <Rectangle.Effect>
+                <BlurEffect Radius="10"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Popup Placement="Center" IsLightDismissEnabled="True" IsOpen="{Binding Is_popup_showing.Value}">
+            <Border CornerRadius="5" Padding="20" Background="White">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="docker-compose up을 이용해 server를 시작한 후 다시 실행해주세요."/>
+                    <Button Content="닫기" Click="shutdown_application"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
 </Window>

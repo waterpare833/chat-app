@@ -1,22 +1,15 @@
-using Avalonia.Controls;
-using Avalonia.Interactivity;
+using Avalonia.Controls.ApplicationLifetimes;
 
 namespace Client.Views;
 
 public partial class MainWindow : Window
 {
     public MainWindow()
-    {
-        InitializeComponent();
-    }
+        => InitializeComponent();
 
-    public MainWindow(object? dataContext) : this()
+    private void shutdown_application(object? sender, RoutedEventArgs e)
     {
-        DataContext = dataContext;
-    }
-
-    private async void Test(object? sender, RoutedEventArgs e)
-    {
-        await App.ChatHub!.Send_message("Hello, world!");
+        if (Avalonia.Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) 
+            desktop.Shutdown();
     }
 }

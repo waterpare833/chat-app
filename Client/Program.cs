@@ -1,20 +1,17 @@
-﻿using Avalonia;
-using Avalonia.ReactiveUI;
-using System;
+﻿using Avalonia.ReactiveUI;
 
 namespace Client;
 
 internal static class Program
 {
     [STAThread]
-    public static void Main(string[] args) => BuildAvaloniaApp()
+    public static void Main(string[] args) => Program.BuildAvaloniaApp()
         .StartWithClassicDesktopLifetime(args)
 ;
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
-            .WithInterFont()
             .LogToTrace()
             .UseReactiveUI();
 }

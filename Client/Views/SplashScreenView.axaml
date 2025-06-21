@@ -1,0 +1,17 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Client.Views.SplashScreenView">
+    
+    <Design.DataContext>
+        <vm:SplashScreenViewModel/>
+    </Design.DataContext>
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" Width="200" Height="100">
+        <TextBlock Text="로딩 중..." FontSize="18" HorizontalAlignment="Center"/>
+        <ProgressBar IsIndeterminate="True" Height="10"/>
+    </StackPanel>
+</UserControl>

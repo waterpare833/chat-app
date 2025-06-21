@@ -1,16 +1,15 @@
-﻿using System;
-using LSH.MY_CONVERTER;
+﻿using LSH.MY_CONVERTER;
 
 namespace Client;
 
 class ChatHubReceiver : IChatHubReceiver
 {
-    public void On_join(string userName)
-        => Console.WriteLine($"{userName} joined.");
+    public void On_join(string user_name)
+        => Console.WriteLine($"{user_name} joined.");
 
-    public void On_leave(string userName)
-        => Console.WriteLine($"{userName} left.");
+    public void On_leave(string user_name)
+        => Console.WriteLine($"{user_name} left.");
 
-    public void on_send_message(string userName, string message)
-        => Console.WriteLine($"{userName}: {message}");
+    public void On_send_message(string user_name, string message)
+        => Console.WriteLine($"{user_name}: {message}");
 }

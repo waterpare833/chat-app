@@ -1,7 +1,4 @@
-using System;
-using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Client.ViewModels;
 
 namespace Client;
 
@@ -9,8 +6,7 @@ public class ViewLocator : IDataTemplate
 {
     public Control? Build(object? data)
     {
-        if (data is null)
-            return null;
+        if (data is null) return null;
 
         var name = data.GetType().FullName!.Replace("ViewModel", "View", StringComparison.Ordinal);
         var type = Type.GetType(name);
@@ -26,7 +22,5 @@ public class ViewLocator : IDataTemplate
     }
 
     public bool Match(object? data)
-    {
-        return data is ViewModelBase;
-    }
+        => data is ReactiveObject;
 }
