@@ -1,11 +1,9 @@
-﻿using MY_REPOSITORY;
-
-namespace Repository.Tests;
+﻿namespace MY_REPOSITORY.TESTS;
 
 public class UserRepositoryTests: IDisposable
 {
     private readonly SqliteConnection connection;
-    private readonly IUserRepository user_repository;
+    private readonly UserRepository user_repository;
 
     public UserRepositoryTests()
     {
@@ -17,23 +15,23 @@ public class UserRepositoryTests: IDisposable
         DatabaseInitializer.Ensure_user_table_created(this.connection);
 
         // 리포지토리에 주입
-        this.user_repository = new UserRepository(this.connection);
+        this.user_repository = new(this.connection);
     }
 
     [Fact]
-    public async Task 사용자추가_성공_새로운아이디일때()
+    public async Task 새로운_아이디면_사용자가_추가된다()
     {
         var result = await this.user_repository.Add_user("test1", "hash123");
         result.Should().BeTrue();
 
         var user = await this.user_repository.Get_user("test1");
         user.Should().NotBeNull();
-        user!.Username.Should().Be("test1");
+        user.Username.Should().Be("test1");
         user.Password_hash.Should().Be("hash123");
     }
 
     [Fact]
-    public async Task 사용자추가_실패_중복아이디일때()
+    public async Task 중복_아이디면_사용자가_추가되지_않는다()
     {
         await this.user_repository.Add_user("test1", "hash123");
         var result = await this.user_repository.Add_user("test1", "anotherhash");
@@ -41,10 +39,16 @@ public class UserRepositoryTests: IDisposable
     }
 
     [Fact]
-    public async Task 사용자조회_결_과null_사용자없을때()
+    public async Task 사용자를_조회할_수_있다()
     {
-        var user = await this.user_repository.Get_user("nonexistent");
-        user.Should().BeNull();
+        await this.user_repository.Add_user("test1", "hash123");
+        var existed_user = await this.user_repository.Get_user("test1");
+        existed_user.Should().NotBeNull();
+        existed_user.Username.Should().Be("test1");
+        existed_user.Password_hash.Should().Be("hash123");
+        
+        var not_existed_user = await this.user_repository.Get_user("nonexistent");
+        not_existed_user.Should().BeNull();
     }
 
     public void Dispose()
