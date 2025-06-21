@@ -9,7 +9,8 @@ services:
     command: [ "5058" ]
     
   my-db:
-    image: mydb
+#    image: mydb
+    image:  ghcr.io/waterpare833/chat-app/db
     container_name: my-db
     ports:
         - "7028:7028"
