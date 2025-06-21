@@ -7,3 +7,12 @@ services:
     ports:
       - "5058:5058"
     command: [ "5058" ]
+    
+  my-db:
+    image: mydb
+    container_name: my-db
+    ports:
+        - "7028:7028"
+    volumes:
+        - ./data:/app/data
+    command: [ "7028" ]

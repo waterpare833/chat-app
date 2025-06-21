@@ -15,12 +15,13 @@ builder.Services.AddMagicOnion();
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(container =>
 {
-    var sqlite_connection = new SqliteConnection("Data Source=users.db");
-    sqlite_connection.Open();
+    var user_sqlite_connection_path = builder.Configuration["SQLITE_USER_DB_PATH"] ?? "Data Source=/app/data/users.db";
+    var user_sqlite_connection = new SqliteConnection(user_sqlite_connection_path);
+    user_sqlite_connection.Open();
     
-    DatabaseInitializer.Ensure_user_table_created(sqlite_connection);
+    DatabaseInitializer.Ensure_user_table_created(user_sqlite_connection);
 
-    container.RegisterInstance(sqlite_connection).As<SqliteConnection>().SingleInstance();
+    container.RegisterInstance(user_sqlite_connection).As<SqliteConnection>().SingleInstance();
     container.RegisterType<UserRepository>().As<IUserRepository>().SingleInstance();
 });
 

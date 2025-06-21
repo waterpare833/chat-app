@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <RootNamespace>MY_DB</RootNamespace>
+        <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 

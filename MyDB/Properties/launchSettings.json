@@ -2,7 +2,11 @@
   "profiles": {
     "Port:7028": {
       "commandName": "Project",
-      "commandLineArgs": "7028"
+      "commandLineArgs": "7028",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SQLITE_USER_DB_PATH": "Data Source=users.db"
+      }
     }
   }
 }

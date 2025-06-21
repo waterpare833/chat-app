@@ -10,3 +10,6 @@
 # Build artifacts
 **/bin/
 **/obj/
+
+# users.db
+/**/users.db
