@@ -1,9 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using MagicOnion;
-using MagicOnion.Server;
-
-namespace MY_DB;
+﻿namespace MY_DB;
 
 public class AuthService : ServiceBase<IAuthService>, IAuthService
 {

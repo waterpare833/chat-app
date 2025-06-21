@@ -1,5 +1,7 @@
 ﻿global using Autofac;
 global using Autofac.Extensions.DependencyInjection;
+global using MagicOnion;
+global using MagicOnion.Server;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Hosting;
 global using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -10,3 +12,5 @@ global using MY_DB;
 global using MY_REPOSITORY;
 global using System;
 global using System.Linq;
+global using System.Security.Cryptography;
+global using System.Text;
