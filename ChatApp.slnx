@@ -1,0 +1,12 @@
+﻿<Solution>
+  <Project Path="Client1\Client1.csproj" Type="Classic C#" />
+  <Project Path="Client\Client.csproj" Type="Classic C#" />
+  <Project Path="Data\Data.csproj" Type="Classic C#" />
+  <Project Path="MyConverter.Interface\MyConverter.Interface.csproj" Type="Classic C#" />
+  <Project Path="MyConverter.TempTest\MyConverter.TempTest.csproj" Type="Classic C#" />
+  <Project Path="MyConverter\MyConverter.csproj" Type="Classic C#" />
+  <Project Path="MyDB.Interface\MyDB.Interface.csproj" Type="Classic C#" />
+  <Project Path="MyDB\MyDB.csproj" Type="Classic C#" />
+  <Project Path="Repository.Tests\Repository.Tests.csproj" Type="Classic C#" />
+  <Project Path="Repository\Repository.csproj" Type="Classic C#" />
+</Solution>
