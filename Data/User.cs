@@ -1,12 +1,12 @@
 ﻿namespace MY_DB;
 
-public class User
+public record User(
+    Guid Id,
+    string Username,
+    string Password_hash
+)
 {
-    public long Id { get; set; }
-    public string? Username { get; set; }
-    public string? Password_hash { get; set; }
-
-    public User()
+    public User(string username, string password_hash): this(Guid.NewGuid(), username, password_hash)
     {
     }
 }

@@ -6,12 +6,12 @@ public static class DatabaseInitializer
     {
         var table_command = connection.CreateCommand();
         table_command.CommandText = """
-                CREATE TABLE IF NOT EXISTS Users (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Username TEXT NOT NULL UNIQUE,
-                    Password_hash TEXT NOT NULL
-                );
-            """;
+                                        CREATE TABLE IF NOT EXISTS Users (
+                                            Id TEXT PRIMARY KEY,
+                                            Username TEXT NOT NULL UNIQUE,
+                                            Password_hash TEXT NOT NULL
+                                        );
+                                    """;
         table_command.ExecuteNonQuery();
     }
 }
