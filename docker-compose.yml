@@ -15,5 +15,5 @@ services:
     ports:
         - "7028:7028"
     volumes:
-        - ./db-sdata:/app/data
+        - ./db-data:/app/data
     command: [ "7028" ]
