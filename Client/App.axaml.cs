@@ -1,14 +1,11 @@
 using Avalonia.Markup.Xaml;
 using CHAT_APP.CLIENT.MODEL;
 using CHAT_APP.CLIENT.VIEW;
-using LSH.MY_CONVERTER;
 
 namespace CHAT_APP.CLIENT;
 
 public class App : Application
 {
-    public static IChatHub? Chat_hub;
-    
     public override void Initialize()
         => AvaloniaXamlLoader.Load(this);
 
@@ -19,7 +16,8 @@ public class App : Application
         var builder = new ContainerBuilder();
         
         builder.RegisterType<DbManager>().As<IStartable>().SingleInstance();
-        builder.RegisterType<ChatManager>().As<IStartable>().SingleInstance();
+        builder.RegisterType<ChatManager>().As<IStartable>().AsSelf().SingleInstance();
+        builder.RegisterType<ChatServiceReceiver>().SingleInstance();
 
 
         // Presenter 등록
@@ -38,11 +36,6 @@ public class App : Application
         
         var container = builder.Build();
         desktop.MainWindow = new MainWindow { DataContext = container.Resolve<MainWindowViewModel>() };
-
-        // var channel = GrpcChannel.ForAddress("http://localhost:5058");
-        // var receiver = new ChatHubReceiver();
-        // Chat_hub = await StreamingHubClient.ConnectAsync<IChatHub, IChatHubReceiver>(channel, receiver);
-        //
-        // await Chat_hub.Join_room("room", "client");
+        desktop.Exit += (_, _) => container.Resolve<ChatManager>().Dispose();
     }
 }

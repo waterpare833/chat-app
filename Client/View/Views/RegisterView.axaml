@@ -18,7 +18,7 @@
             <TextBox Name="UserNameTextbox" Grid.Column="0" Watermark="사용자 이름"
                      Text="{Binding Username.Value}" />
             <Button Name="DuplicationCheckUsernameButton" Grid.Column="1" Content="중복 확인" Margin="5,0,0,0"
-                    Command="{Binding On_checking_username_duplication}"/>
+                    Command="{Binding On_checking_username_duplication_button_clicked}"/>
         </Grid>
         
         <TextBlock Name="UsernameValidationMessageTextBlock" FontSize="12"

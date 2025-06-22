@@ -9,7 +9,7 @@ public class RegisterViewModel(): ReactiveObject
     public BindableReactiveProperty<IBrush> Username_validation_message_foreground { get; } = new();
     public BindableReactiveProperty<bool> Register_button_enable{ get; } = new(false);
 
-    public ReactiveCommand On_checking_username_duplication { get; } = new();
+    public ReactiveCommand On_checking_username_duplication_button_clicked { get; } = new();
     public ReactiveCommand On_registering_button_clicked { get; } = new();
     public ReactiveCommand On_back_button_clicked { get; } = new();
     
@@ -19,7 +19,7 @@ public class RegisterViewModel(): ReactiveObject
         ViewPresenter view_presenter,
         UserPresenter user_presenter): this()
     {
-        this.On_checking_username_duplication
+        this.On_checking_username_duplication_button_clicked
             .Subscribe(_ => user_presenter.Request_username_duplication_check.Execute(this.Username.Value));
 
         this.On_registering_button_clicked

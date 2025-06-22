@@ -1,15 +1,11 @@
-﻿using LSH.MY_CONVERTER;
+﻿namespace CHAT_APP.CLIENT.MODEL;
 
-namespace CHAT_APP.CLIENT;
-
-class ChatHubReceiver : IChatHubReceiver
+public class ChatServiceReceiver(ChatPresenter chat_presenter) : IChatServiceReceiver
 {
-    public void On_join(string user_name)
-        => Console.WriteLine($"{user_name} joined.");
+    public void On_join(string username)
+    {
+    }
 
-    public void On_leave(string user_name)
-        => Console.WriteLine($"{user_name} left.");
-
-    public void On_send_message(string user_name, string message)
-        => Console.WriteLine($"{user_name}: {message}");
+    public void On_send_message(string username, string message)
+        => chat_presenter.Messages.Add(new(username, message));
 }

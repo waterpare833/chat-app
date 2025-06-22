@@ -14,7 +14,8 @@ public class LoginViewModel(): ReactiveObject
 
     public LoginViewModel(
         ViewPresenter view_presenter,
-        UserPresenter user_presenter): this()
+        UserPresenter user_presenter,
+        ChatPresenter chat_presenter): this()
     {
         this.On_register_button_clicked
             .Subscribe(_ =>
@@ -39,6 +40,7 @@ public class LoginViewModel(): ReactiveObject
                     this.User_validation_message_visible.Value = true;
                 } else
                 {
+                    chat_presenter.Request_user_join_in_chat_room.Execute(this.Username.Value);
                     view_presenter.Main_view.Value = ViewType.CHAT;
                 }
             });

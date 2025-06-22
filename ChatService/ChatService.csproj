@@ -2,13 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
-        <RootNamespace>LSH.MY_CONVERTER</RootNamespace>
-        <Nullable>enable</Nullable>
+        <RootNamespace> CHAT_APP.CHAT</RootNamespace>
         <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MyConverter.Interface\MyConverter.Interface.csproj" />
+      <ProjectReference Include="..\ChatService.Interface\ChatService.Interface.csproj" />
     </ItemGroup>
 
     <ItemGroup>

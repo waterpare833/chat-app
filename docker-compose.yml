@@ -1,12 +1,12 @@
-﻿name: my-service
+﻿name: chat-backend
 
 services:
-#  my-converter:
-#    image: myconverter
-#    container_name: my-converter-service
-#    ports:
-#      - "5058:5058"
-#    command: [ "5058" ]
+  chat-service:
+    image: chatservice
+    container_name: chat-service
+    ports:
+      - "5058:5058"
+    command: [ "5058" ]
     
   my-db:
     image: db
