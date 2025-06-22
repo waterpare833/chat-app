@@ -1,4 +1,4 @@
-﻿namespace MY_REPOSITORY;
+﻿namespace CHAT_APP.REPOSITORY;
 
 public static class DatabaseInitializer
 {

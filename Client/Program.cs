@@ -1,6 +1,4 @@
-﻿using Avalonia.ReactiveUI;
-
-namespace Client;
+﻿namespace CHAT_APP.CLIENT;
 
 internal static class Program
 {

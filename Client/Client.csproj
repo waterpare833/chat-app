@@ -2,6 +2,7 @@
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>CHAT_APP.CLIENT</RootNamespace>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -24,6 +25,17 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MyConverter.Interface\MyConverter.Interface.csproj" />
-      <ProjectReference Include="..\MyDB.Interface\MyDB.Interface.csproj" />
+      <ProjectReference Include="..\DB.Interface\DB.Interface.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="View\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="View\Views\LoginView.axaml" />
+      <AdditionalFiles Include="View\Views\MainWindow.axaml" />
+      <AdditionalFiles Include="View\Views\RegisterView.axaml" />
+      <AdditionalFiles Include="View\Views\SplashScreenView.axaml" />
     </ItemGroup>
 </Project>

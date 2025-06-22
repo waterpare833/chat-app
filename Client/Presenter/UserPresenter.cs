@@ -1,4 +1,4 @@
-﻿namespace Client;
+﻿namespace CHAT_APP.CLIENT;
 
 public class UserPresenter
 {

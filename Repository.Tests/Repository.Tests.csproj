@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
-        <RootNamespace>MY_REPOSITORY.TESTS</RootNamespace>
+        <RootNamespace>CHAT_APP.REPOSITORY.TESTS</RootNamespace>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 

@@ -1,4 +1,4 @@
-﻿namespace MY_DB;
+﻿namespace CHAT_APP.REPOSITORY;
 
 public class UserRepository(SqliteConnection connection): IUserRepository
 {

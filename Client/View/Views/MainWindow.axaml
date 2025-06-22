@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CHAT_APP.CLIENT.VIEW"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CHAT_APP.CLIENT.VIEW.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Client">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <ContentControl Content="{Binding View.Value}" />
+
+        <Rectangle Name="BlurOverlay" Fill="Gray" Opacity="0.5" IsHitTestVisible="False"
+                   IsVisible="{Binding Is_popup_showing.Value}">
+            <Rectangle.Effect>
+                <BlurEffect Radius="10"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Popup Placement="Center" IsLightDismissEnabled="True" IsOpen="{Binding Is_popup_showing.Value}">
+            <Border CornerRadius="5" Padding="20" Background="White">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="docker-compose up을 이용해 server를 시작한 후 다시 실행해주세요."/>
+                    <Button Content="닫기" Click="shutdown_application"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+</Window>

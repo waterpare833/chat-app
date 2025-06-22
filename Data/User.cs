@@ -1,4 +1,4 @@
-﻿namespace MY_DB;
+﻿namespace CHAT_APP.DATA;
 
 [MessagePackObject(true)]
 public record User(

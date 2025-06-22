@@ -1,6 +1,5 @@
-﻿// Global using directives
-global using FluentAssertions;
+﻿global using FluentAssertions;
 global using Microsoft.Data.Sqlite;
-global using MY_DB;
+global using CHAT_APP.DATA;
 global using System;
 global using System.Threading.Tasks;

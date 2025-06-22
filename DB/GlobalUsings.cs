@@ -1,0 +1,17 @@
+﻿global using Autofac;
+global using Autofac.Extensions.DependencyInjection;
+global using MagicOnion;
+global using MagicOnion.Server;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Server.Kestrel.Core;
+global using Microsoft.Data.Sqlite;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using CHAT_APP.DATA;
+global using CHAT_APP.DB.INTERFACE;
+global using CHAT_APP.REPOSITORY;
+global using System;
+global using System.Linq;
+global using System.Security.Cryptography;
+global using System.Text;

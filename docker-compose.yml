@@ -1,17 +1,17 @@
 ﻿name: my-service
 
 services:
-  my-converter:
-    image: myconverter
-    container_name: my-converter-service
-    ports:
-      - "5058:5058"
-    command: [ "5058" ]
+#  my-converter:
+#    image: myconverter
+#    container_name: my-converter-service
+#    ports:
+#      - "5058:5058"
+#    command: [ "5058" ]
     
   my-db:
-#    image: mydb
-    image:  ghcr.io/waterpare833/chat-app/db
-    container_name: my-db
+    image: db
+#    image:  ghcr.io/waterpare833/chat-app/db
+    container_name: db
     ports:
         - "7028:7028"
     volumes:

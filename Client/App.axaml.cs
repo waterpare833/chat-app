@@ -1,10 +1,9 @@
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Client.MODEL;
-using Client.Views;
+using CHAT_APP.CLIENT.MODEL;
+using CHAT_APP.CLIENT.VIEW;
 using LSH.MY_CONVERTER;
 
-namespace Client;
+namespace CHAT_APP.CLIENT;
 
 public class App : Application
 {

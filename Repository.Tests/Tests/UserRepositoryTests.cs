@@ -1,4 +1,4 @@
-﻿namespace MY_REPOSITORY.TESTS;
+﻿namespace CHAT_APP.REPOSITORY.TESTS;
 
 public class UserRepositoryTests : IDisposable
 {
