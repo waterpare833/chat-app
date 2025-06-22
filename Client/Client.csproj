@@ -29,13 +29,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="View\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <AdditionalFiles Include="View\Views\LoginView.axaml" />
       <AdditionalFiles Include="View\Views\MainWindow.axaml" />
       <AdditionalFiles Include="View\Views\RegisterView.axaml" />
       <AdditionalFiles Include="View\Views\SplashScreenView.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="View\Windows\MainWindow.axaml.cs">
+        <DependentUpon>MainWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 </Project>

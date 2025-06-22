@@ -14,13 +14,22 @@
     <StackPanel Margin="20" Spacing="10" VerticalAlignment="Center">
         <TextBlock Text="로그인" FontSize="24" HorizontalAlignment="Center" />
 
-        <TextBox Watermark="사용자 이름" />
+        <TextBox Name="UserNameTextbox" Watermark="사용자 이름"
+                 Text="{Binding Username.Value}" />
 
-        <TextBox Watermark="비밀번호" PasswordChar="●" />
+        <TextBox Name="PasswordTextbox" Watermark="비밀번호" PasswordChar="●"
+                 Text="{Binding Password.Value}" />
 
+        <TextBlock Name="UserValidationMessageTextBlock"  FontSize="12"
+                   Foreground="{Binding User_validation_message_foreground.Value}"
+                   Text="{Binding User_validation_message.Value}"
+                   IsVisible="{Binding User_validation_message_visible.Value}"/>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10" Margin="0,10,0,0">
-            <Button Content="로그인" Width="100" />
-            <Button Content="회원가입" Width="100"  Command="{Binding On_register_button_clicked}"/>
+            <Button Name="LoginButton" Content="로그인" Width="100"
+                    Command="{Binding On_login_button_clicked}"/>
+            <Button Content="회원가입" Width="100"  
+                    Command="{Binding On_register_button_clicked}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

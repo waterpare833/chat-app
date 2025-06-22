@@ -5,6 +5,7 @@ public class UserPresenter
     public ReactiveCommand<string> Request_username_duplication_check { get; } = new();
     public ReactiveCommand<(string username, bool value)> Receive_username_duplication_result { get; } = new();
     public ReactiveCommand<(string username, string password)> Request_user_register { get; } = new();
+    public ReactiveCommand<(string username, string password)> Request_user_login { get; } = new();
     public ReactiveCommand Receive_user_registration_done { get; } = new();
-
+    public ReactiveCommand<bool> Receive_user_login_done { get; } = new();
 }

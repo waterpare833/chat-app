@@ -18,7 +18,7 @@ public class App : Application
         
         var builder = new ContainerBuilder();
         
-        builder.RegisterType<SampleManager>().As<IStartable>().SingleInstance();
+        builder.RegisterType<DbManager>().As<IStartable>().SingleInstance();
 
         // Presenter 등록
         builder.RegisterType<UserPresenter>().SingleInstance();
@@ -26,8 +26,8 @@ public class App : Application
         
         // ViewModel 등록        
         builder.RegisterType<SplashScreenViewModel>().SingleInstance();
-        builder.RegisterType<LoginViewModel>().InstancePerDependency();
-        builder.RegisterType<RegisterViewModel>().InstancePerDependency();
+        builder.RegisterType<LoginViewModel>().SingleInstance();
+        builder.RegisterType<RegisterViewModel>().SingleInstance();
         builder.RegisterType<MainWindowViewModel>().SingleInstance();
 
         builder.RegisterType<ViewNavigator>().As<IStartable>().SingleInstance();

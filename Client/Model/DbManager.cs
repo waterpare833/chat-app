@@ -1,6 +1,6 @@
 ﻿namespace CHAT_APP.CLIENT.MODEL;
 
-public class SampleManager(
+public class DbManager(
     ViewPresenter view_presenter,
     UserPresenter user_presenter
 ): IStartable
@@ -31,6 +31,13 @@ public class SampleManager(
             var user = new DATA.User(x.username, x.password);
             _ = await user_db_service.Register(user);
             user_presenter.Receive_user_registration_done.Execute(Unit.Default);
+        });
+
+        user_presenter.Request_user_login.Subscribe(async x =>
+        {
+            var user = new DATA.User(x.username, x.password);
+            var result = await user_db_service.Login(user);
+            user_presenter.Receive_user_login_done.Execute(result);
         });
     }
 }
