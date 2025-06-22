@@ -5,6 +5,7 @@ public class ViewNavigator(
     SplashScreenViewModel splash_screen,
     LoginViewModel login,
     RegisterViewModel register,
+    ChatViewModel chat,
     ViewPresenter view_presenter
 ) : IStartable
 {
@@ -17,6 +18,7 @@ public class ViewNavigator(
                 ViewType.SPLASH => splash_screen,
                 ViewType.LOGIN => login,
                 ViewType.REGISTER => register,
+                ViewType.CHAT => chat,
                 _ => login
             };
         });

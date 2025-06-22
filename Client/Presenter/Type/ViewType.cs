@@ -4,5 +4,6 @@ public enum ViewType
 {
     SPLASH,
     LOGIN,
-    REGISTER
+    REGISTER,
+    CHAT
 }

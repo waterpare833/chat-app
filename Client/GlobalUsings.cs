@@ -11,5 +11,6 @@ global using MagicOnion.Client;
 global using R3;
 global using ReactiveUI;
 global using System;
+global using System.Collections.ObjectModel;
 global using System.Reactive.Linq;
 global using ReactiveCommand = R3.ReactiveCommand;

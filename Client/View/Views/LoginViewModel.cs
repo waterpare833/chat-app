@@ -39,7 +39,7 @@ public class LoginViewModel(): ReactiveObject
                     this.User_validation_message_visible.Value = true;
                 } else
                 {
-                    view_presenter.Main_view.Value = ViewType.REGISTER;
+                    view_presenter.Main_view.Value = ViewType.CHAT;
                 }
             });
     }

@@ -19,15 +19,19 @@ public class App : Application
         var builder = new ContainerBuilder();
         
         builder.RegisterType<DbManager>().As<IStartable>().SingleInstance();
+        builder.RegisterType<ChatManager>().As<IStartable>().SingleInstance();
+
 
         // Presenter 등록
         builder.RegisterType<UserPresenter>().SingleInstance();
         builder.RegisterType<ViewPresenter>().SingleInstance();
+        builder.RegisterType<ChatPresenter>().SingleInstance();
         
         // ViewModel 등록        
         builder.RegisterType<SplashScreenViewModel>().SingleInstance();
         builder.RegisterType<LoginViewModel>().SingleInstance();
         builder.RegisterType<RegisterViewModel>().SingleInstance();
+        builder.RegisterType<ChatViewModel>().SingleInstance();
         builder.RegisterType<MainWindowViewModel>().SingleInstance();
 
         builder.RegisterType<ViewNavigator>().As<IStartable>().SingleInstance();

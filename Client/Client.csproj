@@ -30,7 +30,6 @@
 
     <ItemGroup>
       <AdditionalFiles Include="View\Views\LoginView.axaml" />
-      <AdditionalFiles Include="View\Views\MainWindow.axaml" />
       <AdditionalFiles Include="View\Views\RegisterView.axaml" />
       <AdditionalFiles Include="View\Views\SplashScreenView.axaml" />
     </ItemGroup>

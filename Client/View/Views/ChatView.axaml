@@ -1,0 +1,35 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:CHAT_APP.CLIENT.VIEW"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CHAT_APP.CLIENT.VIEW.ChatView"
+             x:DataType="vm:ChatViewModel">
+    
+    <Design.DataContext>
+        <vm:ChatViewModel />
+    </Design.DataContext>
+    
+    <DockPanel Margin="10">
+        <!-- 메시지 리스트 -->
+        <ListBox DockPanel.Dock="Top"
+                 ItemsSource="{Binding Messages}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="vm:ChatMessage">
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="{Binding Username}" FontWeight="Bold" />
+                        <TextBlock Text=":" Margin="10 0"/>
+                        <TextBlock Text="{Binding Message}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- 입력창과 버튼 -->
+        <Grid VerticalAlignment="Bottom" ColumnDefinitions="*,Auto">
+            <TextBox Grid.Column="0" Watermark="메세지를 입력하세요." />
+            <Button Grid.Column="1" Content="Send" Margin="5,0,0,0" />
+        </Grid>
+    </DockPanel>
+</UserControl>
