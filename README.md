@@ -98,8 +98,10 @@ gRPC 및 MagicOnion에 대한 이해를 바탕으로, 실제 사용 가능한 �
 
 ## 🐳 Docker 정보
 
-- DB 이미지: `ghcr.io/waterpare833/chat-app/db:latest`
-- Chat Server 이미지: `ghcr.io/waterpare833/chat-app/chat-service:latest`
+- **DB 이미지**: `ghcr.io/waterpare833/chat-app/db:latest`\
+  - **Port**: `5058`
+- **Chat Server 이미지**: `ghcr.io/waterpare833/chat-app/chat-service:latest`\
+  - **Port**: `7028`
 
 ---
 
